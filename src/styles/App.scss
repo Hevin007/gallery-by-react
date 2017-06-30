@@ -1,3 +1,13 @@
+@font-face {
+  font-family: "iconfont";
+  src: url('../fonts/icons/iconfont.eot') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/icons/iconfont.woff') format('woff'), /* chrome, firefox */
+  url('../fonts/icons/iconfont.ttf') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/icons/iconfont.svg') format('svg'); /* iOS 4.1- */
+}
+
+
+
 html, body {
   background-color: #222;
   width: 100%;
@@ -88,5 +98,39 @@ html, body {
   width: 100%;
   text-align: center;
 
+  @at-root {
+    .controller-unit {
+      display: inline-block;
+      margin: 0 5px;
+      width: 30px;
+      height: 30px;
+      text-align: center;
+      vertical-align: middle;
+      cursor: pointer;
+      background-color: #aaa;
+      border-radius: 50%;
+      transform: scale(.5);
+      transition: transform .6s ease-in-out, background-color .3s;
+
+      &.is-center {
+        background-color: #888;
+        transform: scale(1);
+        &::after {
+          line-height: 30px;
+          color: #fff;
+          font-family: "iconfont";
+          content: "\e74f";
+          font-size: 80%;
+          -webkit-font-smoothing: antialiased;
+          -moz-osx-font-smoothing: grayscale;
+        }
+        // icon font
+        &.is-inverse {
+          background-color: #555;
+          transform: rotateY(180deg);
+        }
+      }
+    }
+  }
 }
 /*controller end*/
